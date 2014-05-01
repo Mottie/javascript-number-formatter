@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS Number Formatter &bull; Test/Sample Page</title>
+	<style>
+		table {border-collapse: collapse;}
+		th, td {border:1px solid lightgray;}
+		.group {background-color: wheat}
+	</style>
+</head>
+<body>
+	<h2><a href="http://code.google.com/p/javascript-number-formatter/">JavaScript Number Formatter</a> - Test/Sample Page</h2>
+	<table id="list" width="80%">
+		<tr>
+			<th>No</th><th>Description</th><th>Input</th><th>Format</th><th>Output</th><th>Remark</th>
+		</tr>
+		<tr>
+			<td colspan="6" class="group">Most common world wide</td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Simple</td>
+			<td class="input">123456.789</td>
+			<td class="format">#,##0.00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Random</td>
+			<td class="input">20110628.15001234</td>
+			<td class="format">#,##0.###0</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+
+			<td class="item"></td>
+			<td>Random</td>
+			<td class="input">0</td>
+			<td class="format">#,###.##0</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+
+			<td class="item"></td>
+			<td>Long number</td>
+			<td class="input">1234567890.1234567890</td>
+			<td class="format">#,###.##0</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+
+			<td class="item"></td>
+			<td>Negative value</td>
+			<td class="input">-0.1</td>
+			<td class="format">#</td>
+			<td class="output">0,000.00</td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Negative value</td>
+			<td class="input">-5000.123456789</td>
+			<td class="format">#,##0.######</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="group">Localization format</td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>US, UK and many more</td>
+			<td class="input">1234567.890</td>
+			<td class="format">#,##0.00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Estonia, France</td>
+			<td class="input">-128983833.4560022</td>
+			<td class="format">### ###,##</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Germany, Italy</td>
+			<td class="input">-1234560.10002920</td>
+			<td class="format">##.000,00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Japan</td>
+			<td class="input">963852741.001</td>
+			<td class="format">###,####.00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Switzerland</td>
+			<td class="input">33445566.778899</td>
+			<td class="format">#'###'#00.00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="group">Any format</td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td></td>
+			<td class="input">-1234.5678</td>
+			<td class="format">##.000,00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td></td>
+			<td class="input">4651321.841</td>
+			<td class="format">##^000*00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td></td>
+			<td class="input">11.498</td>
+			<td class="format">-##¿000$00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td></td>
+			<td class="input">465456456.87987212</td>
+			<td class="format">00!00@00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Force comma as separator</td>
+			<td class="input">1112341.4348712</td>
+			<td class="format">###,###.</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Force space as separator</td>
+			<td class="input">2344441.4348712</td>
+			<td class="format">### ###.</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Force dot as separator</td>
+			<td class="input">2345341.4348712</td>
+			<td class="format">###.### </td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+
+	</table>
+	<br/>
+
+	<hr/>
+	<h3>See also...</h3>
+
+	Original:
+	<ul>
+		<li><a href="http://code.google.com/p/javascript-number-formatter/">javascript-number-formatter</a> repository</li>
+		<li><a href="http://www.integraxor.com/developer/codes/js-formatter/format-sample.htm">Demo</a></li>
+	</ul>
+<!--
+	<p>
+		<a href="http://www.integraxor.com/demo.htm">Web Based HMI/SCADA interactive online demo</a><br/>
+		If you know what's SCADA then you may be interested to see this peace of code performs in real life application.
+	</p>
+	<p>
+
+	</p>
+-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="format.js"></script>
+	<script>
+	var i = 0;
+	$('.row').each( function() {
+		var inp = $(this).find('td.input'),
+		fmt = $(this).find('td.format'),
+		out = $(this).find('td.output');
+
+		out.html( format(fmt.html(), inp.html())); //only this line is relevant to number formatting.
+
+		$(this).find('.item').html(++i);
+		inp.css('text-align', 'right');
+		fmt.css('text-align', 'right');
+		out.css('text-align', 'right');
+	});
+	</script>
+</body>
+</html>
