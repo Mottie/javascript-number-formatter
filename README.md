@@ -39,6 +39,10 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 ## Version
 
+### v1.1.1 (5/1/2014)
+
+* Various fixes to get Travis builds to work.
+
 ### v1.1.0 (5/1/2014)
 
 * Forked a copy of the script on GitHub
