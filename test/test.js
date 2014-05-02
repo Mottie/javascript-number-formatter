@@ -64,7 +64,7 @@ test('Prefix & Suffix', function() {
 
 });
 
-test("Masks that don't work", function() {
+test('Masks that don\'t work', function() {
   expect(4);
 
   // not allowed
