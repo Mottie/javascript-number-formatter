@@ -5,7 +5,7 @@
 	<title>JS Number Formatter &bull; Test/Sample Page</title>
 	<style>
 		table {border-collapse: collapse;}
-		th, td {border:1px solid lightgray;}
+		th, td {border:1px solid lightgray; padding: 2px 5px;}
 		.group {background-color: wheat}
 	</style>
 </head>
@@ -172,6 +172,152 @@
 			<td></td>
 		</tr>
 
+		<tr>
+			<td colspan="6" class="group">Prefix &amp; Suffix</td>
+		</tr>
+
+		<tr class="row">
+			<td class="item"></td>
+			<td>No spaces</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">$#,##0.00USD</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Spaces</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">$ #,##0.00 USD</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td></td>
+			<td class="input">123456789.9876</td>
+			<td class="format">##.000,00 €</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td></td>
+			<td class="input">123456789.9876</td>
+			<td class="format">###,####.00 ¥</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td></td>
+			<td class="input">123456789.9876</td>
+			<td class="format">### ###,### ¢ and stuff</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td></td>
+			<td class="input">123456789.9876</td>
+			<td class="format">  #,##0.00 a b c</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Spaces &amp; parenthesis</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">$  (#,###.00)  Money</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Prefix with comma</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">a, b c? #.00 yep!</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Prefix with a periods</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">cost... #,##0.00 yep!</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Suffix with comma &amp; period</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">$# ###,00 USD, or euros.</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Suffix with period</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">It costs $# ###,00 euros.</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Hanging decimal</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">test:### ###. ing</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td colspan="6" class="group">Masks that don't work</td>
+		</tr>
+
+		<tr class="row">
+			<td class="item"></td>
+			<td>No "#" outside of mask</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">item #abc $#,###.00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>No numbers outside of mask</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">99 items = $#,###.00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>No dashes outside of mask</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">cost -- $#,###.00 -- value</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>No plus sign in prefix</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">++ value! $#,###.00</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>No plus sign in suffix</td>
+			<td class="input">123456789.9876</td>
+			<td class="format">$#,###.00 ++ value!</td>
+			<td class="output"></td>
+			<td></td>
+		</tr>
+
 	</table>
 	<br/>
 
@@ -193,7 +339,7 @@
 	</p>
 -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="lib/format.js"></script>
+	<script src="src/format.js"></script>
 	<script>
 	var i = 0;
 	$('.row').each( function() {

@@ -18,17 +18,37 @@ alert( format( "#,##0.####", 1234567.890)); //output: 1,234,567.89
 * Accept any numbers of digit grouping. `#,##,#0.000` or `#,###0.##` are all valid.
 * Accept any redundant/fool-proof formatting. `##,###,##.#` or `0#,#00#.###0#` are all OK.
 * Auto number rounding.
-* Simple interface, just supply mask & value like this: `format( "0.0000", 3.141592)`
+* Simple interface, just supply mask & value like this: `format( "0.0000", 3.141592)`.
+* Include a prefix &amp; suffix with the mask
 
 ## Limitations
 
-* No prefix or suffix is allowed except leading negation symbol. So `$#,##0.00` or `#,###.##USD` will not yield expected outcome. Use `'$'+format('#,##0.00', 123.45)` or `format('#,##0.00', 456.789) + 'USD'`
 * No scientific/engineering formatting.
 * Not for date or phone formation.
 * No color control.
+* <del>No prefix or suffix is allowed except leading negation symbol. So `$#,##0.00` or `#,###.##USD` will not yield expected outcome. Use `'$'+format('#,##0.00', 123.45)` or `format('#,##0.00', 456.789) + 'USD'`</del>
+* The prefix or suffix can not include any numbers (`0-9`), dashes (`-`), or plus signs (`+`).
 
 ## Note
 
 When there's only one symbol is supplied, system will always treat the single symbol as Decimal. For instance, `format( '#,###', 1234567.890)` will output `1234567,890`. To force a single symbol as Separator, add a trailing dot to the end like this: `format( '#,###.', 1234567.890)` which will then output `1,234,567`.
 
-A demo/sample page with few examples is provided ([DEMO]()). The code is safe to be minimized using Google Compiler in Advanced mode.
+A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io/javascript-number-formatter/)). The code is safe to be minimized using Google Compiler in Advanced mode.
+
+## Version
+
+### v1.1.0 (5/1/2014)
+
+* Forked a copy of the script on GitHub
+* Clean up
+  * Cleaned up code for jshint.
+  * Add grunt build with jshint, testing & compression.
+  * Register script with bower.
+* Add support for a prefix &amp; suffix within the mask.
+  * Updated demo with prefix &amp; suffix examples; showing allowed and not-allowed formats.
+  * Updated tests
+
+### r2 (v1.0.0) (6/29/2011)
+
+* Initial development release at https://code.google.com/p/javascript-number-formatter/
+

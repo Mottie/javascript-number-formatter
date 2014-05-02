@@ -5,7 +5,19 @@ window.format = function( m, v ){
 	}
 
 	var isNegative, result, decimal, group, posLeadZero, posTrailZero, posSeparator, part, szSep,
-		integer, str, offset, i, l;
+		integer, str, offset, i, l, len, start, prefix, end, suffix, inv
+
+	// find prefix/suffix
+	len = m.length;
+	start = m.search(/[0-9\-\+#]/);
+	prefix = start > 0 ? m.substring(0, start) : '';
+	// reverse string: not an ideal method if there are surrogate pairs
+	inv = m.split('').reverse().join('');
+	end = inv.search(/[0-9\-\+#]/);
+	i = len - end;
+	i += (m.substring( i, i + 1 ) === '.') ? 1 : 0;
+	suffix = end > 0 ? m.substring( i, len) : '';
+	m = m.substring(start, i);
 
 	// convert any string to number according to formation sign.
 	v = m.charAt(0) === '-' ? -v : +v;
@@ -64,5 +76,6 @@ window.format = function( m, v ){
 	}
 
 	v[1] = ( m[1] && v[1] ) ? decimal + v[1] : '';
-	return ( isNegative ? '-' : '' ) + v[0] + v[1]; // put back any negation and combine integer and fraction.
+	// put back any negation, combine integer and fraction, and add back prefix & suffix
+	return prefix + ( ( isNegative ? '-' : '' ) + v[0] + v[1] ) + suffix;
 };
