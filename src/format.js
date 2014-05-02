@@ -1,6 +1,6 @@
 /*jshint browser:true */
 window.format = function( m, v ){
-"use strict";
+	'use strict';
 	if ( !m || isNaN(+v) ) {
 		return v; // return as it is.
 	}
