@@ -2,6 +2,8 @@
 
 Lightweight & Fast JavaScript Number Formatter
 
+[![Build Status](https://travis-ci.org/Mottie/javascript-number-formatter.png?branch=master)](https://travis-ci.org/Mottie/javascript-number-formatter)
+
 ## Introduction
 
 This standalone number formatter is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is as short as 75 lines including license info, blank lines and comments. And production release is as small as 849 bytes.
