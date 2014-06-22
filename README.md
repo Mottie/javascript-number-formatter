@@ -39,6 +39,11 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 ## Version
 
+### v1.1.2 (6/22/2014)
+
+* Remove negative sign from results with a value of zero.
+* Added more examples to demo page.
+
 ### v1.1.1 (5/1/2014)
 
 * Various fixes to get Travis builds to work.
@@ -57,4 +62,3 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 ### r2 (v1.0.0) (6/29/2011)
 
 * Initial development release at https://code.google.com/p/javascript-number-formatter/
-

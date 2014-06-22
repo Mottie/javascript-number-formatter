@@ -3,12 +3,15 @@ var format = window.format;
 /* Simple mask */
 test('basic masks', function() {
 
-  expect(22);
+  expect(25);
   strictEqual( format('#,##0.00', 123456789.123), '123,456,789.12', 'Mask: "#,##0.00"');
   strictEqual( format('#,##0.00', 123456.789),    '123,456.79');
   strictEqual( format('#,##0.00', 123456.7),      '123,456.70');
   strictEqual( format('#,##0.00', 123456),        '123,456.00');
   strictEqual( format('#,##0.00', 0),             '0.00');
+  strictEqual( format('#',        -0.1),          '');
+  strictEqual( format('0',        -0.1),          '0');
+  strictEqual( format('0.#',      -0.13),         '-0.1');
   strictEqual( format('#,##0.00', -123),          '-123.00');
   strictEqual( format('#,##0.00', -123456.789),   '-123,456.79');
 
@@ -74,4 +77,3 @@ test('Masks that don\'t work', function() {
   strictEqual( format('++ value! $#,###.00 ++ value!',      123456789.123) !== '++ value! $123,456,789.12 ++ value!',      true, 'BROKEN: plus signs outside of mask');
 
 });
-

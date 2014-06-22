@@ -4,16 +4,19 @@
 	<meta charset="utf-8">
 	<title>JS Number Formatter &bull; Test/Sample Page</title>
 	<style>
-		table {border-collapse: collapse;}
-		th, td {border:1px solid lightgray; padding: 2px 5px;}
-		.group {background-color: wheat}
+		table { border-collapse: collapse; }
+		th, td { border:1px solid lightgray; padding: 2px 5px; }
+		.input, .format, .output { text-align: right; }
+		.format, .output { white-space: pre; }
+		.group { background-color: wheat }
+		code { background-color: #eee; }
 	</style>
 </head>
 <body>
 	<h2><a href="http://code.google.com/p/javascript-number-formatter/">JavaScript Number Formatter</a> - Test/Sample Page</h2>
 	<table id="list" width="80%">
 		<tr>
-			<th>No</th><th>Description</th><th>Input</th><th>Format</th><th>Output</th><th>Remark</th>
+			<th>#</th><th>Description</th><th>Input</th><th>Format</th><th>Output</th>
 		</tr>
 		<tr>
 			<td colspan="6" class="group">Most common world wide</td>
@@ -24,7 +27,6 @@
 			<td class="input">123456.789</td>
 			<td class="format">#,##0.00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -32,34 +34,41 @@
 			<td class="input">20110628.15001234</td>
 			<td class="format">#,##0.###0</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
-
 			<td class="item"></td>
 			<td>Random</td>
 			<td class="input">0</td>
 			<td class="format">#,###.##0</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
-
 			<td class="item"></td>
 			<td>Long number</td>
 			<td class="input">1234567890.1234567890</td>
 			<td class="format">#,###.##0</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
-
 			<td class="item"></td>
 			<td>Negative value</td>
 			<td class="input">-0.1</td>
 			<td class="format">#</td>
-			<td class="output">0,000.00</td>
-			<td></td>
+			<td class="output"></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Negative value</td>
+			<td class="input">-0.1</td>
+			<td class="format">0</td>
+			<td class="output"></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Negative value</td>
+			<td class="input">-0.13</td>
+			<td class="format">0.#</td>
+			<td class="output"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -67,7 +76,6 @@
 			<td class="input">-5000.123456789</td>
 			<td class="format">#,##0.######</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr>
 			<td colspan="6" class="group">Localization format</td>
@@ -78,7 +86,6 @@
 			<td class="input">1234567.890</td>
 			<td class="format">#,##0.00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -86,7 +93,6 @@
 			<td class="input">-128983833.4560022</td>
 			<td class="format">### ###,##</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -94,7 +100,6 @@
 			<td class="input">-1234560.10002920</td>
 			<td class="format">##.000,00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -102,7 +107,6 @@
 			<td class="input">963852741.001</td>
 			<td class="format">###,####.00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -110,7 +114,6 @@
 			<td class="input">33445566.778899</td>
 			<td class="format">#'###'#00.00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr>
 			<td colspan="6" class="group">Any format</td>
@@ -121,7 +124,6 @@
 			<td class="input">-1234.5678</td>
 			<td class="format">##.000,00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -129,15 +131,13 @@
 			<td class="input">4651321.841</td>
 			<td class="format">##^000*00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
-			<td class="input">11.498</td>
+			<td class="input">3411.498</td>
 			<td class="format">-##¿000$00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -145,7 +145,6 @@
 			<td class="input">465456456.87987212</td>
 			<td class="format">00!00@00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -153,7 +152,6 @@
 			<td class="input">1112341.4348712</td>
 			<td class="format">###,###.</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -161,7 +159,6 @@
 			<td class="input">2344441.4348712</td>
 			<td class="format">### ###.</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -169,7 +166,6 @@
 			<td class="input">2345341.4348712</td>
 			<td class="format">###.### </td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 
 		<tr>
@@ -182,15 +178,13 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">$#,##0.00USD</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
-			<td>Spaces</td>
+			<td>Extra spaces (set <code>white-space: pre;</code> in cells)</td>
 			<td class="input">123456789.9876</td>
-			<td class="format">$ #,##0.00 USD</td>
+			<td class="format">$    #,##0.00  USD</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -198,7 +192,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">##.000,00 €</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -206,7 +199,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">###,####.00 ¥</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -214,7 +206,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">### ###,### ¢ and stuff</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -222,15 +213,20 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">  #,##0.00 a b c</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
-			<td>Spaces &amp; parenthesis</td>
+			<td>Spaces &amp; parenthesis (indicates a negative value, but the input is positive)</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">$  (#,###.00)  Money</td>
 			<td class="output"></td>
-			<td></td>
+		</tr>
+		<tr class="row">
+			<td class="item"></td>
+			<td>Spaces &amp; parenthesis (negative)</td>
+			<td class="input">-123456789.9876</td>
+			<td class="format">$  (#,###.00)  Money</td>
+			<td class="output"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -238,7 +234,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">a, b c? #.00 yep!</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -246,7 +241,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">cost... #,##0.00 yep!</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -254,7 +248,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">$# ###,00 USD, or euros.</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -262,7 +255,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">It costs $# ###,00 euros.</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -270,7 +262,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">test:### ###. ing</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 
 		<tr>
@@ -283,7 +274,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">item #abc $#,###.00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -291,7 +281,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">99 items = $#,###.00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -299,7 +288,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">cost -- $#,###.00 -- value</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -307,7 +295,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">++ value! $#,###.00</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -315,7 +302,6 @@
 			<td class="input">123456789.9876</td>
 			<td class="format">$#,###.00 ++ value!</td>
 			<td class="output"></td>
-			<td></td>
 		</tr>
 
 	</table>
@@ -327,7 +313,7 @@
 	Original:
 	<ul>
 		<li><a href="http://code.google.com/p/javascript-number-formatter/">javascript-number-formatter</a> repository</li>
-		<li><a href="http://www.integraxor.com/developer/codes/js-formatter/format-sample.htm">Demo</a></li>
+		<li><del><a href="http://www.integraxor.com/developer/codes/js-formatter/format-sample.htm">Demo</a></del> (demo was removed)</li>
 	</ul>
 <!--
 	<p>
@@ -341,18 +327,14 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="src/format.js"></script>
 	<script>
-	var i = 0;
-	$('.row').each( function() {
+	$('.row').each( function(i) {
 		var inp = $(this).find('td.input'),
 		fmt = $(this).find('td.format'),
 		out = $(this).find('td.output');
 
 		out.html( format(fmt.html(), inp.html())); //only this line is relevant to number formatting.
 
-		$(this).find('.item').html(++i);
-		inp.css('text-align', 'right');
-		fmt.css('text-align', 'right');
-		out.css('text-align', 'right');
+		$(this).find('.item').html(i+1);
 	});
 	</script>
 </body>

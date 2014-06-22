@@ -75,8 +75,14 @@ window.format = function( m, v ){
 		}
 		v[0] = str;
 	}
-
 	v[1] = ( m[1] && v[1] ) ? decimal + v[1] : '';
+
+	// remove negative sign if result is zero
+	result = v.join('');
+	if (result === '0' || result === '') {
+		isNegative = false;
+	}
+
 	// put back any negation, combine integer and fraction, and add back prefix & suffix
 	return prefix + ( ( isNegative ? '-' : '' ) + v[0] + v[1] ) + suffix;
 };
