@@ -18,6 +18,8 @@ window.format = function( m, v ){
 	i = len - end;
 	i += (m.substring( i, i + 1 ) === '.') ? 1 : 0;
 	suffix = end > 0 ? m.substring( i, len) : '';
+
+	// mask with prefix & suffix removed
 	m = m.substring(start, i);
 
 	// convert any string to number according to formation sign.
@@ -80,9 +82,10 @@ window.format = function( m, v ){
 	// remove negative sign if result is zero
 	result = v.join('');
 	if (result === '0' || result === '') {
+		// remove negative sign if result is zero
 		isNegative = false;
 	}
 
 	// put back any negation, combine integer and fraction, and add back prefix & suffix
-	return prefix + ( ( isNegative ? '-' : '' ) + v[0] + v[1] ) + suffix;
+	return prefix + ( ( isNegative ? '-' : '' ) + result ) + suffix;
 };

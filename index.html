@@ -4,16 +4,28 @@
 	<meta charset="utf-8">
 	<title>JS Number Formatter &bull; Test/Sample Page</title>
 	<style>
+		body, table, footer, .example { margin: 0 auto; }
+		h2 { text-align: center; }
+		h3, footer, .example { margin-left: 10%; }
 		table { border-collapse: collapse; }
 		th, td { border:1px solid lightgray; padding: 2px 5px; }
 		.input, .format, .output { text-align: right; }
 		.format, .output { white-space: pre; }
 		.group { background-color: wheat }
-		code { background-color: #eee; }
+		body pre.prettyprint { border: 0; }
 	</style>
 </head>
 <body>
-	<h2><a href="http://code.google.com/p/javascript-number-formatter/">JavaScript Number Formatter</a> - Test/Sample Page</h2>
+	<h2><a href="https://github.com/Mottie/javascript-number-formatter">JavaScript Number Formatter</a><br> Test/Sample Page</h2>
+
+	<h3>Usage</h3>
+	<div class="example">
+		<pre class="prettyprint lang-js">// format( mask, value );
+// result "1,234,567.89"
+format( "#,##0.####", 1234567.890 );</pre>
+	</div>
+
+	<h3>Examples</h3>
 	<table id="list" width="80%">
 		<tr>
 			<th>#</th><th>Description</th><th>Input</th><th>Format</th><th>Output</th>
@@ -310,22 +322,19 @@
 	<hr/>
 	<h3>See also...</h3>
 
-	Original:
-	<ul>
-		<li><a href="http://code.google.com/p/javascript-number-formatter/">javascript-number-formatter</a> repository</li>
-		<li><del><a href="http://www.integraxor.com/developer/codes/js-formatter/format-sample.htm">Demo</a></del> (demo was removed)</li>
-	</ul>
-<!--
-	<p>
-		<a href="http://www.integraxor.com/demo.htm">Web Based HMI/SCADA interactive online demo</a><br/>
-		If you know what's SCADA then you may be interested to see this peace of code performs in real life application.
-	</p>
-	<p>
+	<footer>
+		Original:
+		<ul>
+			<li><a href="http://code.google.com/p/javascript-number-formatter/">javascript-number-formatter</a> repository</li>
+			<li><del><a href="http://www.integraxor.com/developer/codes/js-formatter/format-sample.htm">Demo</a></del> (demo was removed)</li>
+		</ul>
+	</footer>
 
-	</p>
--->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="src/format.js"></script>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
 	<script>
 	$('.row').each( function(i) {
 		var inp = $(this).find('td.input'),
@@ -334,7 +343,7 @@
 
 		out.html( format(fmt.html(), inp.html())); //only this line is relevant to number formatting.
 
-		$(this).find('.item').html(i+1);
+		$(this).find('.item').html( i + 1 );
 	});
 	</script>
 </body>

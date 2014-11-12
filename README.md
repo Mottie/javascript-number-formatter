@@ -9,7 +9,8 @@ Lightweight & Fast JavaScript Number Formatter
 This standalone number formatter is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is as short as 75 lines including license info, blank lines and comments. And production release is as small as 849 bytes.
 
 ```js
-alert( format( "#,##0.####", 1234567.890)); //output: 1,234,567.89
+format( "#,##0.####", 1234567.890 );  // output: "1,234,567.89"
+format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 ```
 
 ## Features
@@ -38,6 +39,11 @@ When there's only one symbol is supplied, system will always treat the single sy
 A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io/javascript-number-formatter/)). The code is safe to be minimized using Google Compiler in Advanced mode.
 
 ## Version
+
+### v1.1.3 (11/12/2014)
+
+* Fix bower link to point to the production version. Thanks [marcelboettcher](https://github.com/marcelboettcher)!
+* Minor code & demo cleanup.
 
 ### v1.1.2 (6/22/2014)
 
