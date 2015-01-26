@@ -42,7 +42,7 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 ### v1.1.4 (1/26/2015)
 
-* Add AMD & NodeJS compatibility (UMD).
+* Add AMD & NodeJS compatibility (UMD). Thanks [MadMG](https://github.com/MadMG)!
 * Renamed variables & code cleanup to make it more readable.
 
 ### v1.1.3 (11/12/2014)
