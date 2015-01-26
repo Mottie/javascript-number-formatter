@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     concat: {
       options: {
         banner: '/**\n' +
-                ' * <%= pkg.name %>\n' +
+                ' * <%= pkg.nick %>\n' +
                 ' * <%= pkg.description %>\n' +
                 ' *\n' +
                 ' * @preserve IntegraXor Web SCADA - JavaScript Number Formatter (http://www.integraxor.com/)\n' +
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= pkg.homepage %> * (c) ecava */\n',
+        banner: '/*! <%= pkg.nick %> - v<%= pkg.version %> - <%= pkg.homepage %> * (c) ecava */\n',
         report: 'gzip'
       },
       dist: {
