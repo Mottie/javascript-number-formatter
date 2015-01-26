@@ -40,6 +40,11 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 ## Version
 
+### v1.1.4 (1/26/2015)
+
+* Add AMD & NodeJS compatibility (UMD).
+* Renamed variables & code cleanup to make it more readable.
+
 ### v1.1.3 (11/12/2014)
 
 * Fix bower link to point to the production version. Thanks [marcelboettcher](https://github.com/marcelboettcher)!
@@ -49,22 +54,3 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 * Remove negative sign from results with a value of zero.
 * Added more examples to demo page.
-
-### v1.1.1 (5/1/2014)
-
-* Various fixes to get Travis builds to work.
-
-### v1.1.0 (5/1/2014)
-
-* Forked a copy of the script on GitHub
-* Clean up
-  * Cleaned up code for jshint.
-  * Add grunt build with jshint, testing & compression.
-  * Register script with bower.
-* Add support for a prefix &amp; suffix within the mask.
-  * Updated demo with prefix &amp; suffix examples; showing allowed and not-allowed formats.
-  * Updated tests
-
-### r2 (v1.0.0) (6/29/2011)
-
-* Initial development release at https://code.google.com/p/javascript-number-formatter/

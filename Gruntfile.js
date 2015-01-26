@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> * IntegraXor Web SCADA - http://www.integraxor.com/ */\n',
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= pkg.homepage %> * (c) ecava */\n',
         report: 'gzip'
       },
       dist: {
