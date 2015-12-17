@@ -1,5 +1,14 @@
 {
   "name": "number-format.js",
-  "version": "1.1.5",
-  "main": "lib/format.min.js"
+  "main": "lib/format.min.js",
+  "ignore": [
+    "/node_modules",
+    "/bower_components",
+    "/.git",
+    "/src",
+    "/test",
+    "/Gruntfile.js",
+    "/package.json",
+    "/index.html"
+  ]
 }

@@ -2,7 +2,7 @@
 
 Lightweight & Fast JavaScript Number Formatter
 
-[![Build Status](https://travis-ci.org/Mottie/javascript-number-formatter.png?branch=master)](https://travis-ci.org/Mottie/javascript-number-formatter)
+[![Build Status][build-image]][build-url]
 
 ## Introduction
 
@@ -48,7 +48,16 @@ When there's only one symbol is supplied, system will always treat the single sy
 
 A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io/javascript-number-formatter/)). The code is safe to be minimized using Google Compiler in Advanced mode.
 
+[build-url]: https://travis-ci.org/Mottie/javascript-number-formatter
+[build-image]: https://travis-ci.org/Mottie/javascript-number-formatter.png?branch=master
+
 ## Version
+
+### v1.1.7 (12/16/2015)
+
+* bower.json: remove version number &amp; add ignore entry.
+* Update `format.min.js`.
+* Update dependencies.
 
 ### v1.1.6 (12/16/2015)
 
@@ -58,18 +67,3 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 * Change name in bower.json & package.json to "number-format.js".
 * Update readme with installation instructions.
-
-### v1.1.4 (1/26/2015)
-
-* Add AMD & NodeJS compatibility (UMD). Thanks [MadMG](https://github.com/MadMG)!
-* Renamed variables & code cleanup to make it more readable.
-
-### v1.1.3 (11/12/2014)
-
-* Fix bower link to point to the production version. Thanks [marcelboettcher](https://github.com/marcelboettcher)!
-* Minor code & demo cleanup.
-
-### v1.1.2 (6/22/2014)
-
-* Remove negative sign from results with a value of zero.
-* Added more examples to demo page.
