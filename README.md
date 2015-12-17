@@ -50,7 +50,11 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 ## Version
 
-### V1.1.5 (1/26/2015)
+### v1.1.6 (12/16/2015)
+
+* Modify package.json files entry. Fixes [issue #3](https://github.com/Mottie/javascript-number-formatter/issues/3).
+
+### v1.1.5 (1/26/2015)
 
 * Change name in bower.json & package.json to "number-format.js".
 * Update readme with installation instructions.
