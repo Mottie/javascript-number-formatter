@@ -3,7 +3,7 @@ var format = window.format;
 /* Simple mask */
 test('basic masks', function() {
 
-  expect(25);
+  expect(32);
   strictEqual( format('#,##0.00', 123456789.123), '123,456,789.12', 'Mask: "#,##0.00"');
   strictEqual( format('#,##0.00', 123456.789),    '123,456.79');
   strictEqual( format('#,##0.00', 123456.7),      '123,456.70');
@@ -31,6 +31,16 @@ test('basic masks', function() {
   strictEqual( format('#,##0.',   -123),          '-123');
   strictEqual( format('#,##0.',   -123456.789),   '-123,457');
 
+
+  strictEqual( format('#.##0,',   123456789.123), '123.456.789', 'Mask: "#.##0,"');
+  strictEqual( format('#.##0,',   123456.789),    '123.457');
+  strictEqual( format('#.##0,',   123456.7),      '123.457');
+  strictEqual( format('#.##0,',   123456),        '123.456');
+  strictEqual( format('#.##0,',   0),             '0');
+  strictEqual( format('#.##0,',   -123),          '-123');
+  strictEqual( format('#.##0,',   -123456.789),   '-123.457');
+
+
   strictEqual( format('#,##0.###0', 12345678.98765432), '12,345,678.9877', 'Mask: "#,##0.###0"');
 
 });
@@ -44,6 +54,19 @@ test('Localizations', function() {
   strictEqual( format('#\'###\'#00.00', 123456789.987654321), '123\'456\'789.99', 'Switzerland: #\'###\'#00.00');
 
 });
+
+
+/* Precision */
+test('Precision', function() {
+  expect(5);
+  strictEqual( format('### ###,',   123456789.987654321), '123 456 790');
+  strictEqual( format('###.###,',   123456789.987654321), '123.456.790');
+  strictEqual( format('##,000.',    123456789.987654321), '123,456,790');
+  strictEqual( format('###,####.',  123456789.187654321), '1,2345,6789');
+  strictEqual( format('#\'###\'#00,', 123456789.087654321), '123\'456\'789');
+});
+
+
 
 /* Mask with prefix and/or suffix */
 test('Prefix & Suffix', function() {
