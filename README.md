@@ -2,7 +2,11 @@
 
 Lightweight & Fast JavaScript Number Formatter
 
-[![Build Status][build-image]][build-url]
+[![Build Status][build-image]][build-url] [![Bower Version][bower-image]][bower-url] [![NPM Version][npm-image]][npm-url] [![devDependency Status][david-dev-image]][david-dev-url]
+
+
+
+
 
 ## Introduction
 
@@ -53,6 +57,12 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 [build-url]: https://travis-ci.org/Mottie/javascript-number-formatter
 [build-image]: https://travis-ci.org/Mottie/javascript-number-formatter.png?branch=master
+[npm-url]: https://www.npmjs.com/package/number-format.js
+[npm-image]: https://img.shields.io/npm/v/number-format.js.svg
+[david-dev-url]: https://david-dm.org/Mottie/javascript-number-formatter#info=devDependencies
+[david-dev-image]: https://david-dm.org/Mottie/javascript-number-formatter/dev-status.svg
+[bower-url]: http://bower.io/search/?q=javascript-number-formatter
+[bower-image]: https://img.shields.io/bower/v/javascript-number-formatter.svg
 
 ## Recent Changes
 
