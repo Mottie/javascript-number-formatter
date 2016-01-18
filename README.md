@@ -6,12 +6,15 @@ Lightweight & Fast JavaScript Number Formatter
 
 ## Introduction
 
-This standalone number formatter is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is as short as < 120 lines including license info, blank lines and comments. And production release is less than 1,200 bytes.
+This standalone number formatter<sup>&dagger;</sup> is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is as short as < 120 lines including license info, blank lines and comments. And production release is less than 1,200 bytes.
+
 
 ```js
 format( "#,##0.####", 1234567.890 );  // output: "1,234,567.89"
 format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 ```
+
+&dagger; Initial development release of this code was written by KPL and hosted at [Google Code](https://code.google.com/p/javascript-number-formatter/).
 
 ## Features
 
@@ -51,7 +54,13 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 [build-url]: https://travis-ci.org/Mottie/javascript-number-formatter
 [build-image]: https://travis-ci.org/Mottie/javascript-number-formatter.png?branch=master
 
-## Version
+## Recent Changes
+
+View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
+
+### v1.1.8 (1/18/2016)
+
+* Fixed bug that caused zero precisions formats to not work with commas as decimal separators. See [pull #4](https://github.com/Mottie/javascript-number-formatter/pull/4); thanks [@AaronHirsch](https://github.com/AaronHirsch)!
 
 ### v1.1.7 (12/16/2015)
 
@@ -62,8 +71,3 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 ### v1.1.6 (12/16/2015)
 
 * Modify package.json files entry. Fixes [issue #3](https://github.com/Mottie/javascript-number-formatter/issues/3).
-
-### v1.1.5 (1/26/2015)
-
-* Change name in bower.json & package.json to "number-format.js".
-* Update readme with installation instructions.
