@@ -27,7 +27,8 @@
 			str = mask.split( '' ).reverse().join( '' ),
 			end = str.search( /[0-9\-\+#]/ ),
 			offset = len - end,
-			indx = offset + ( ( mask.substring( offset, offset + 1 ) === '.' ) ? 1 : 0 ),
+			substr = mask.substring( offset, offset + 1 ),
+			indx = offset + ( ( substr === '.' || ( substr === ',' )) ? 1 : 0 ),
 			suffix = end > 0 ? mask.substring( indx, len ) : '';
 
 		// mask with prefix & suffix removed
