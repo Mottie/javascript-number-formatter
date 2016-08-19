@@ -2,16 +2,11 @@
 
 Lightweight & Fast JavaScript Number Formatter
 
-[![Build Status][build-image]][build-url] [![Bower Version][bower-image]][bower-url] [![NPM Version][npm-image]][npm-url] [![devDependency Status][david-dev-image]][david-dev-url]
-
-
-
-
+[![Build Status][build-image]][build-url] [![Bower Version][bower-image]][bower-url] [![NPM Version][npm-image]][npm-url] [![devDependency Status][david-dev-image]][david-dev-url] [![MIT][license-image]][license-url]
 
 ## Introduction
 
 This standalone number formatter<sup>&dagger;</sup> is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is as short as < 120 lines including license info, blank lines and comments. And production release is less than 1,200 bytes.
-
 
 ```js
 format( "#,##0.####", 1234567.890 );  // output: "1,234,567.89"
@@ -59,10 +54,12 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 [build-image]: https://travis-ci.org/Mottie/javascript-number-formatter.png?branch=master
 [npm-url]: https://www.npmjs.com/package/number-format.js
 [npm-image]: https://img.shields.io/npm/v/number-format.js.svg
-[david-dev-url]: https://david-dm.org/Mottie/javascript-number-formatter#info=devDependencies
+[david-dev-url]: https://david-dm.org/Mottie/javascript-number-formatter?type=dev
 [david-dev-image]: https://david-dm.org/Mottie/javascript-number-formatter/dev-status.svg
 [bower-url]: http://bower.io/search/?q=javascript-number-formatter
 [bower-image]: https://img.shields.io/bower/v/javascript-number-formatter.svg
+[license-url]: https://github.com/Mottie/javascript-number-formatter/blob/master/LICENSE
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
 ## Recent Changes
 
