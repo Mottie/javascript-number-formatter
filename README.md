@@ -65,6 +65,11 @@ A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io
 
 View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
 
+### v1.1.10 (8/19/2016)
+
+* Update license.
+* Update dependencies & rebuild.
+
 ### v1.1.9 (1/18/2016)
 
 * Update dependencies & version bump.
@@ -72,13 +77,3 @@ View the [complete change log here](https://github.com/Mottie/javascript-number-
 ### v1.1.8 (1/18/2016)
 
 * Fixed bug that caused zero precisions formats to not work with commas as decimal separators. See [pull #4](https://github.com/Mottie/javascript-number-formatter/pull/4); thanks [@AaronHirsch](https://github.com/AaronHirsch)!
-
-### v1.1.7 (12/16/2015)
-
-* bower.json: remove version number &amp; add ignore entry.
-* Update `format.min.js`.
-* Update dependencies.
-
-### v1.1.6 (12/16/2015)
-
-* Modify package.json files entry. Fixes [issue #3](https://github.com/Mottie/javascript-number-formatter/issues/3).
