@@ -24,7 +24,8 @@ format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 * Accept any redundant/fool-proof formatting. `##,###,##.#` or `0#,#00#.###0#` are all OK.
 * Auto number rounding.
 * Simple interface, just supply mask & value like this: `format( "0.0000", 3.141592)`.
-* Include a prefix &amp; suffix with the mask
+* Include a prefix &amp; suffix with the mask.
+* The code is safe to be minimized using Google Compiler in Advanced mode.
 
 ## Limitations
 
@@ -32,7 +33,7 @@ format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 * Not for date or phone formation.
 * No color control.
 * <del>No prefix or suffix is allowed except leading negation symbol. So `$#,##0.00` or `#,###.##USD` will not yield expected outcome. Use `'$'+format('#,##0.00', 123.45)` or `format('#,##0.00', 456.789) + 'USD'`</del>
-* The prefix or suffix can not include any numbers (`0-9`), dashes (`-`), or plus signs (`+`).
+* The prefix or suffix *can not* include any numbers (`0-9`), dashes (`-`), or plus signs (`+`).
 
 ## Installation
 
@@ -46,9 +47,9 @@ format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 
 ## Note
 
-When there's only one symbol is supplied, system will always treat the single symbol as Decimal. For instance, `format( '#,###', 1234567.890)` will output `1234567,890`. To force a single symbol as Separator, add a trailing dot to the end like this: `format( '#,###.', 1234567.890)` which will then output `1,234,567`.
+When only one symbol is supplied, the library will always treat that symbol as a decimal. For example, `format( '#,###', 1234567.890)` will output `1234567,890`.
 
-The code is safe to be minimized using Google Compiler in Advanced mode.
+To force a single symbol to be used as a separator, add a trailing symbol. In this example, a period is added to the end of the mask - `format( '#,###.', 1234567.890)` - resulting in it being used as a decimal and forcing the first symbol to be the separator and return this output: `1,234,567`.
 
 ## Demos
 
