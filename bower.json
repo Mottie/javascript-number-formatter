@@ -1,6 +1,6 @@
 {
   "name": "number-format.js",
-  "main": "lib/format.min.js",
+  "main": "src/format.js",
   "ignore": [
     "/node_modules",
     "/bower_components",
