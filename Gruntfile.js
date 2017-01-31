@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                 ' * @author <%= pkg.author.name %>\n' +
                 ' * @maintainer <%= pkg.maintainers[0].name %>\n' +
                 ' * @copyright <%= grunt.template.today("yyyy") %> ecava\n' +
-                ' * @license <%= pkg.licenses[0].type %> <<%= pkg.licenses[0].url %>>\n' +
+                ' * @license <%= pkg.license %>\n' +
                 ' * @link <%= pkg.homepage %>\n' +
                 ' * @version <%= pkg.version %>\n' +
                 ' */\n'
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.nick %> - v<%= pkg.version %> - <%= pkg.homepage %> * (c) ecava */\n',
+        banner: '/*! <%= pkg.nick %> - v<%= pkg.version %> - <%= pkg.homepage %> * © ecava */\n',
         report: 'gzip'
       },
       dist: {

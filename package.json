@@ -2,7 +2,7 @@
   "name": "number-format.js",
   "nick": "javascript-number-formatter",
   "description": "Lightweight & Fast JavaScript Number Formatter",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "homepage": "http://mottie.github.com/javascript-number-formatter/",
   "main": "lib/format.min.js",
   "demo": "https://github.com/Mottie/javascript-number-formatter/index.html",
@@ -21,16 +21,7 @@
       "email": "wowmotty@gmail.com"
     }
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/mit-license.php"
-    },
-    {
-      "type": "GPL",
-      "url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-    }
-  ],
+  "license": "MIT",
   "bugs": "https://github.com/Mottie/javascript-number-formatter/issues",
   "docs": "http://mottie.github.com/javascript-number-formatter/index.html",
   "keywords": [
@@ -50,7 +41,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-qunit": "^1.2.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0"
