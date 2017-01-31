@@ -72,6 +72,19 @@ And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyo
 
 View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
 
+### v1.1.11 (1/31/2017)
+
+* Readme:
+  * Update log.
+  * Add playground link.
+  * Reword note.
+* Meta:
+  * Update dependencies.
+  * Remove GPL portion of the license &amp; update `package.json` entry.
+  * Fix `bower.json` "main" reference.
+* Build:
+  * Fix build process to use the updated `package.json` license format.
+
 ### v1.1.10 (8/19/2016)
 
 * Update license.
@@ -80,7 +93,3 @@ View the [complete change log here](https://github.com/Mottie/javascript-number-
 ### v1.1.9 (1/18/2016)
 
 * Update dependencies & version bump.
-
-### v1.1.8 (1/18/2016)
-
-* Fixed bug that caused zero precisions formats to not work with commas as decimal separators. See [pull #4](https://github.com/Mottie/javascript-number-formatter/pull/4); thanks [@AaronHirsch](https://github.com/AaronHirsch)!
