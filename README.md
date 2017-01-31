@@ -48,7 +48,13 @@ format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 
 When there's only one symbol is supplied, system will always treat the single symbol as Decimal. For instance, `format( '#,###', 1234567.890)` will output `1234567,890`. To force a single symbol as Separator, add a trailing dot to the end like this: `format( '#,###.', 1234567.890)` which will then output `1,234,567`.
 
-A demo/sample page with few examples is provided ([DEMO](http://mottie.github.io/javascript-number-formatter/)). The code is safe to be minimized using Google Compiler in Advanced mode.
+The code is safe to be minimized using Google Compiler in Advanced mode.
+
+## Demos
+
+A demo/sample page with few examples is provided ([demo](http://mottie.github.io/javascript-number-formatter/)).
+
+And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyodx/
 
 [build-url]: https://travis-ci.org/Mottie/javascript-number-formatter
 [build-image]: https://travis-ci.org/Mottie/javascript-number-formatter.png?branch=master
