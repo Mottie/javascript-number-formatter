@@ -31,11 +31,13 @@
     "currency"
   ],
   "files": [
-    "lib/"
+    "lib/",
+    "index.d.ts"
   ],
   "scripts": {
     "test": "grunt test"
   },
+  "typings": "./index.d.ts",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
