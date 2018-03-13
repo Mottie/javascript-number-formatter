@@ -104,10 +104,12 @@ test('Masks that don\'t work', function() {
 
 test('Numbers with negative sign' , function() {
 
-    expect(3);
+    expect(5);
     strictEqual( format('-#,##0.######',   -5000.123456789), '-5,000.123457');
     strictEqual( format('-#,##0.######',   5000.123456789), '5,000.123457');
     strictEqual( format('#,##0.######',   -5000.123456789), '5,000.123457');
+    strictEqual( format('$ #,###.00',   -1234567.890), '$ 1,234,567.89');
+    strictEqual( format('$ -#,###.00',   -1234567.890), '$ -1,234,567.89');
 });
 
 test('Numbers with positive sign' , function() {
