@@ -3,8 +3,9 @@ var format = window.format;
 /* Simple mask */
 test('basic masks', function() {
 
-  expect(32);
+  expect(33);
   strictEqual( format('#,##0.00', 123456789.123), '123,456,789.12', 'Mask: "#,##0.00"');
+  strictEqual( format('#,##0.00', '123456.789'),  '123,456.79');
   strictEqual( format('#,##0.00', 123456.789),    '123,456.79');
   strictEqual( format('#,##0.00', 123456.7),      '123,456.70');
   strictEqual( format('#,##0.00', 123456),        '123,456.00');

@@ -48,7 +48,7 @@
 		// split the decimal for the format string if any.
 		mask = mask.split(decimal);
 		// Fix the decimal first, toFixed will auto fill trailing zero.
-		value = value.toFixed(mask[1] && mask[1].length);
+		value = (+value).toFixed(mask[1] && mask[1].length);
 		value = +(value) + ''; // convert number to string to trim off *all* trailing decimal zero(es)
 
 		// fill back any trailing zero according to format
