@@ -10,7 +10,7 @@ This standalone number formatter<sup>&dagger;</sup> is intended to be short and 
 
 ```js
 format( "#,##0.####", 1234567.890 );  // output: "1,234,567.89"
-format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
+format( "$ -#,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 ```
 
 &dagger; Initial development release of this code was written by KPL and hosted at [Google Code](https://code.google.com/p/javascript-number-formatter/).
@@ -39,11 +39,11 @@ format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 
 ### npm package
 
-    npm install --save number-format.js
+    npm install --save hyyan/javascript-number-formatter
 
 ### bower
 
-    bower install number-format.js --save
+    bower install hyyan/javascript-number-formatter --save
 
 ## Note
 
@@ -71,6 +71,10 @@ And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyo
 ## Recent Changes
 
 View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
+
+### v2.0.0 (3/13/2018)
+
+* [Implement different Handling for Negative "-" and Positive "+" Signs](https://github.com/Mottie/javascript-number-formatter/issues/9)
 
 ### v1.1.11 (1/31/2017)
 
