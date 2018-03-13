@@ -39,11 +39,11 @@ format( "$ -#,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 
 ### npm package
 
-    npm install --save number-format.js
+    npm install --save hyyan/javascript-number-formatter
 
 ### bower
 
-    bower install number-format.js --save
+    bower install hyyan/javascript-number-formatter --save
 
 ## Note
 
