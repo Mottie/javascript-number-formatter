@@ -11,25 +11,25 @@ test('basic masks', function() {
   strictEqual( format('#,##0.00', 0),             '0.00');
   strictEqual( format('#',        -0.1),          '');
   strictEqual( format('0',        -0.1),          '0');
-  strictEqual( format('0.#',      -0.13),         '-0.1');
-  strictEqual( format('#,##0.00', -123),          '-123.00');
-  strictEqual( format('#,##0.00', -123456.789),   '-123,456.79');
+  strictEqual( format('0.#',      -0.13),         '0.1');
+  strictEqual( format('#,##0.00', -123),          '123.00');
+  strictEqual( format('#,##0.00', -123456.789),   '123,456.79');
 
   strictEqual( format('#,##0.0',  123456789.123), '123,456,789.1', 'Mask: "#,##0.0"');
   strictEqual( format('#,##0.0',  123456.789),    '123,456.8');
   strictEqual( format('#,##0.0',  123456.7),      '123,456.7');
   strictEqual( format('#,##0.0',  123456),        '123,456.0');
   strictEqual( format('#,##0.0',  0),             '0.0');
-  strictEqual( format('#,##0.0',  -123),          '-123.0');
-  strictEqual( format('#,##0.0',  -123456.789),   '-123,456.8');
+  strictEqual( format('#,##0.0',  -123),          '123.0');
+  strictEqual( format('#,##0.0',  -123456.789),   '123,456.8');
 
   strictEqual( format('#,##0.',   123456789.123), '123,456,789', 'Mask: "#,##0."');
   strictEqual( format('#,##0.',   123456.789),    '123,457');
   strictEqual( format('#,##0.',   123456.7),      '123,457');
   strictEqual( format('#,##0.',   123456),        '123,456');
   strictEqual( format('#,##0.',   0),             '0');
-  strictEqual( format('#,##0.',   -123),          '-123');
-  strictEqual( format('#,##0.',   -123456.789),   '-123,457');
+  strictEqual( format('#,##0.',   -123),          '123');
+  strictEqual( format('#,##0.',   -123456.789),   '123,457');
 
 
   strictEqual( format('#.##0,',   123456789.123), '123.456.789', 'Mask: "#.##0,"');
@@ -37,8 +37,8 @@ test('basic masks', function() {
   strictEqual( format('#.##0,',   123456.7),      '123.457');
   strictEqual( format('#.##0,',   123456),        '123.456');
   strictEqual( format('#.##0,',   0),             '0');
-  strictEqual( format('#.##0,',   -123),          '-123');
-  strictEqual( format('#.##0,',   -123456.789),   '-123.457');
+  strictEqual( format('#.##0,',   -123),          '123');
+  strictEqual( format('#.##0,',   -123456.789),   '123.457');
 
 
   strictEqual( format('#,##0.###0', 12345678.98765432), '12,345,678.9877', 'Mask: "#,##0.###0"');
@@ -99,4 +99,22 @@ test('Masks that don\'t work', function() {
   strictEqual( format('cost -- $#,###.00 -- value',         123456789.123) !== 'cost -- $123,456,789.12 -- value',         true, 'BROKEN: dashes outside of mask');
   strictEqual( format('++ value! $#,###.00 ++ value!',      123456789.123) !== '++ value! $123,456,789.12 ++ value!',      true, 'BROKEN: plus signs outside of mask');
 
+});
+
+
+test('Numbers with negative sign' , function() {
+
+    expect(3);
+    strictEqual( format('-#,##0.######',   -5000.123456789), '-5,000.123457');
+    strictEqual( format('-#,##0.######',   5000.123456789), '5,000.123457');
+    strictEqual( format('#,##0.######',   -5000.123456789), '5,000.123457');
+});
+
+test('Numbers with positive sign' , function() {
+
+  expect(4);
+  strictEqual( format('+#,##0.######',   +5000.123456789), '+5,000.123457');
+  strictEqual( format('+#,##0.######',   5000.123456789), '+5,000.123457');
+  strictEqual( format('#,##0.######',  +5000.123456789), '5,000.123457');
+  strictEqual( format('+#,##0.######',  -5000.123456789), '-5,000.123457');
 });
