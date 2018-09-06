@@ -72,7 +72,20 @@ And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyo
 
 View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
 
-### v1.1.11 (1/31/2017)
+### v1.1.12 (2018-09-05)
+
+* Core
+  * Different Handling for Negative "-" and Positive "+" Signs. See [pull #11](https://github.com/Mottie/javascript-number-formatter/pull/11); thanks [@hyyan](https://github.com/hyyan)!
+  * Prevent JS error when passing a string.
+* Readme:
+  * Update log.
+* Meta:
+  * Add typescript support. See [pull #8](https://github.com/Mottie/javascript-number-formatter/pull/8); thanks [@chuv](https://github.com/chuv)!
+* Demo:
+  * Fix prettify loading.
+  * Use https. Fixes [issue #13](https://github.com/Mottie/javascript-number-formatter/issues/13).
+
+### v1.1.11 (2017-01-31)
 
 * Readme:
   * Update log.
@@ -85,11 +98,7 @@ View the [complete change log here](https://github.com/Mottie/javascript-number-
 * Build:
   * Fix build process to use the updated `package.json` license format.
 
-### v1.1.10 (8/19/2016)
+### v1.1.10 (2016-08-19)
 
 * Update license.
 * Update dependencies & rebuild.
-
-### v1.1.9 (1/18/2016)
-
-* Update dependencies & version bump.
