@@ -1,4 +1,4 @@
-/*jshint browser:true */
+/* jshint browser:true */
 /* global define, module */
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
@@ -10,22 +10,22 @@
 	}
 }(this, function () {
 
-	return function (mask, value) {
+	return function (mask, value, options) {
 		'use strict';
 		if (!mask || isNaN(+value)) {
 			return value; // return as it is.
 		}
 
 		var isNegative, result, decimal, group, posLeadZero, posTrailZero, posSeparator,
-			part, szSep, integer, maskHasNegativeSign, maskHasPositiveSign,
+			part, szSep, integer, maskHasNegativeSign, maskHasPositiveSign, sign,
 
 			// find prefix/suffix
 			len = mask.length,
-			start = mask.search(/[0-9\-\+#]/),
+			start = mask.search(/[0-9\-+#]/),
 			prefix = start > 0 ? mask.substring(0, start) : '',
 			// reverse string: not an ideal method if there are surrogate pairs
 			str = mask.split('').reverse().join(''),
-			end = str.search(/[0-9\-\+#]/),
+			end = str.search(/[0-9\-+#]/),
 			offset = len - end,
 			substr = mask.substring(offset, offset + 1),
 			indx = offset + ((substr === '.' || (substr === ',')) ? 1 : 0),
@@ -39,6 +39,7 @@
 
 		// convert any string to number according to formation sign.
 		isNegative = value < 0 ? (value = -value) : 0; // process only abs(), and turn on flag.
+		sign = isNegative ? '-' : '';
 
 		// search for separator for grp & decimal, anything not digit, not +/- sign, not #.
 		result = mask.match(/[^\d\-\+#]/g);
@@ -84,7 +85,7 @@
 			for (indx = 0; indx < len; indx++) {
 				str += integer.charAt(indx); // ie6 only support charAt for sz.
 				// -posSeparator so that won't trail separator on full length
-				/*jshint -W018 */
+				/* jshint -W018 */
 				if (!((indx - offset + 1) % posSeparator) && indx < len - posSeparator) {
 					str += group;
 				}
@@ -98,18 +99,19 @@
 		if (result === '0' || result === '') {
 			// remove negative sign if result is zero
 			isNegative = false;
+			sign = '';
+		}
+
+		if (!isNegative && maskHasPositiveSign) {
+			sign = '+';
+		} else if (isNegative && maskHasPositiveSign) {
+			sign = '-';
+		} else if (isNegative) {
+			sign = options && options.enforceMaskSign && !maskHasNegativeSign ? '' : '-';
 		}
 
 		// put back any negation, combine integer and fraction, and add back prefix & suffix
-		return prefix +
-			(
-				(
-					!isNegative && maskHasPositiveSign ? '+' :
-						isNegative && maskHasPositiveSign ? '-' :
-							(isNegative && maskHasNegativeSign) ? '-' : ''
-				) + result
-			) +
-			suffix;
+		return prefix + sign + result + suffix;
 	};
 
 }));
