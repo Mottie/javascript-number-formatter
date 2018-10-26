@@ -71,6 +71,19 @@ And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyo
 
 View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
 
+### v2.0.0 (2018-10-26)
+
+* Add `ignoreSign` option (modified to `enforeceMaskSign`!).
+* Switch to XO, AVA & rollup.
+* Meta: Update dot files & remove bower support.
+* Code cleanup & convert to ES2015.
+  * Rename `ignoreSign` to `enforceMaskSign` (default `false`).
+  * Reduce code complexity.
+  * Export as node module.
+  * Update TS with options.
+  * Switch demo to use lib file & highlight valid results.
+* Switch from Grunt to rollup.
+
 ### v1.1.12 (2018-09-05)
 
 * Core
