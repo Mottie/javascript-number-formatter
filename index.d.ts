@@ -1,2 +1,2 @@
-declare const format : (mask: string, value: number) => string;
+declare const format : (mask: string, value: number, options: object) => string;
 export = format;

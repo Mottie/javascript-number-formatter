@@ -2,7 +2,7 @@
 
 Lightweight & Fast JavaScript Number Formatter
 
-[![Build Status][build-image]][build-url] [![Bower Version][bower-image]][bower-url] [![NPM Version][npm-image]][npm-url] [![devDependency Status][david-dev-image]][david-dev-url] [![MIT][license-image]][license-url]
+[![Build Status][build-image]][build-url] [![NPM Version][npm-image]][npm-url] [![devDependency Status][david-dev-image]][david-dev-url] [![MIT][license-image]][license-url]
 
 ## Introduction
 
@@ -10,7 +10,13 @@ This standalone number formatter<sup>&dagger;</sup> is intended to be short and 
 
 ```js
 format( "#,##0.####", 1234567.890 );  // output: "1,234,567.89"
-format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
+format( "$ #,###.00", -1234567.890 ); // output: "$ 1,234,567.89"
+
+// Added in v2.0.0
+format( "$ #,###.00", -1234567.890, {ignoreMaskSign: true});  // output: "$ 1,234,567.89"
+format( "$ -#,###.00", -1234567.890, {ignoreMaskSign: true}); // output: "$ -1,234,567.89"
+format( "$ +#,###.00", -1234567.890, {ignoreMaskSign: true}); // output: "$ -1,234,567.89"
+format( "$ +#,###.00", 1234567.890, {ignoreMaskSign: true});  // output: "$ +1,234,567.89"
 ```
 
 &dagger; Initial development release of this code was written by KPL and hosted at [Google Code](https://code.google.com/p/javascript-number-formatter/).
@@ -25,7 +31,6 @@ format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 * Auto number rounding.
 * Simple interface, just supply mask & value like this: `format( "0.0000", 3.141592)`.
 * Include a prefix &amp; suffix with the mask.
-* The code is safe to be minimized using Google Compiler in Advanced mode.
 
 ## Limitations
 
@@ -40,10 +45,6 @@ format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 ### npm package
 
     npm install --save number-format.js
-
-### bower
-
-    bower install number-format.js --save
 
 ## Note
 
@@ -63,8 +64,6 @@ And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyo
 [npm-image]: https://img.shields.io/npm/v/number-format.js.svg
 [david-dev-url]: https://david-dm.org/Mottie/javascript-number-formatter?type=dev
 [david-dev-image]: https://david-dm.org/Mottie/javascript-number-formatter/dev-status.svg
-[bower-url]: http://bower.io/search/?q=javascript-number-formatter
-[bower-image]: https://img.shields.io/bower/v/javascript-number-formatter.svg
 [license-url]: https://github.com/Mottie/javascript-number-formatter/blob/master/LICENSE
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 
@@ -97,8 +96,3 @@ View the [complete change log here](https://github.com/Mottie/javascript-number-
   * Fix `bower.json` "main" reference.
 * Build:
   * Fix build process to use the updated `package.json` license format.
-
-### v1.1.10 (2016-08-19)
-
-* Update license.
-* Update dependencies & rebuild.

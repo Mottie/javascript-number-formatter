@@ -13,6 +13,8 @@
 		.format, .output { white-space: pre; }
 		.group { background-color: wheat }
 		body pre.prettyprint { border: 0; }
+		.output:not(.valid) { background-color: rgba(160, 17, 17, 0.4); }
+		.output.valid { background-color: rgba(17, 160, 17, 0.4); }
 	</style>
 </head>
 <body>
@@ -38,56 +40,56 @@ format( "#,##0.####", 1234567.890 );</pre>
 			<td>Simple</td>
 			<td class="input">123456.789</td>
 			<td class="format">#,##0.00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="123,456.79"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Random</td>
 			<td class="input">20110628.15001234</td>
 			<td class="format">#,##0.###0</td>
-			<td class="output"></td>
+			<td class="output" data-expected="20,110,628.1500"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Random</td>
 			<td class="input">0</td>
 			<td class="format">#,###.##0</td>
-			<td class="output"></td>
+			<td class="output" data-expected=".000"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Long number</td>
 			<td class="input">1234567890.1234567890</td>
 			<td class="format">#,###.##0</td>
-			<td class="output"></td>
+			<td class="output" data-expected="1,234,567,890.123"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Negative value</td>
 			<td class="input">0.1</td>
 			<td class="format">#</td>
-			<td class="output"></td>
+			<td class="output" data-expected=""></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Negative value</td>
 			<td class="input">0.1</td>
 			<td class="format">0</td>
-			<td class="output"></td>
+			<td class="output" data-expected="0"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Negative value</td>
 			<td class="input">0.13</td>
 			<td class="format">0.#</td>
-			<td class="output"></td>
+			<td class="output" data-expected="0.1"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Negative value</td>
 			<td class="input">5000.123456789</td>
 			<td class="format">#,##0.######</td>
-			<td class="output"></td>
+			<td class="output" data-expected="5,000.123457"></td>
 		</tr>
 		<tr>
 			<td colspan="6" class="group">Localization format</td>
@@ -97,35 +99,35 @@ format( "#,##0.####", 1234567.890 );</pre>
 			<td>US, UK and many more</td>
 			<td class="input">1234567.890</td>
 			<td class="format">#,##0.00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="1,234,567.89"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Estonia, France</td>
 			<td class="input">128983833.4560022</td>
 			<td class="format">### ###,##</td>
-			<td class="output"></td>
+			<td class="output" data-expected="128 983 833,46"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Germany, Italy</td>
 			<td class="input">1234560.10002920</td>
 			<td class="format">##.000,00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="1.234.560,10"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Japan</td>
 			<td class="input">963852741.001</td>
 			<td class="format">###,####.00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="9,6385,2741.00"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Switzerland</td>
 			<td class="input">33445566.778899</td>
 			<td class="format">#'###'#00.00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="33'445'566.78"></td>
 		</tr>
 		<tr>
 			<td colspan="6" class="group">Any format</td>
@@ -135,49 +137,49 @@ format( "#,##0.####", 1234567.890 );</pre>
 			<td></td>
 			<td class="input">1234.5678</td>
 			<td class="format">##.000,00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="1.234,57"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
 			<td class="input">4651321.841</td>
 			<td class="format">##^000*00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="4^651^321*84"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
 			<td class="input">3411.498</td>
 			<td class="format">-##¿000$00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="3¿411$50"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
 			<td class="input">465456456.87987212</td>
 			<td class="format">00!00@00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="4!65!45!64!56@88"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Force comma as separator</td>
 			<td class="input">1112341.4348712</td>
 			<td class="format">###,###.</td>
-			<td class="output"></td>
+			<td class="output" data-expected="1,112,341"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Force space as separator</td>
 			<td class="input">2344441.4348712</td>
 			<td class="format">### ###.</td>
-			<td class="output"></td>
+			<td class="output" data-expected="2 344 441"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Force dot as separator</td>
 			<td class="input">2345341.4348712</td>
 			<td class="format">###.### </td>
-			<td class="output"></td>
+			<td class="output" data-expected="2345341.435"></td>
 		</tr>
 
 		<tr>
@@ -189,91 +191,91 @@ format( "#,##0.####", 1234567.890 );</pre>
 			<td>No spaces</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">$#,##0.00USD</td>
-			<td class="output"></td>
+			<td class="output" data-expected="$123,456,789.99USD"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Extra spaces (set <code>white-space: pre;</code> in cells)</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">$    #,##0.00  USD</td>
-			<td class="output"></td>
+			<td class="output" data-expected="$    123,456,789.99  USD"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
 			<td class="input">123456789.9876</td>
 			<td class="format">##.000,00 €</td>
-			<td class="output"></td>
+			<td class="output" data-expected="123.456.789,99 €"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
 			<td class="input">123456789.9876</td>
 			<td class="format">###,####.00 ¥</td>
-			<td class="output"></td>
+			<td class="output" data-expected="1,2345,6789.99 ¥"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
 			<td class="input">123456789.9876</td>
 			<td class="format">### ###,### ¢ and stuff</td>
-			<td class="output"></td>
+			<td class="output" data-expected="123 456 789,988 ¢ and stuff"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
 			<td class="input">123456789.9876</td>
 			<td class="format">  #,##0.00 a b c</td>
-			<td class="output"></td>
+			<td class="output" data-expected="123,456,789.99 a b c"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Spaces &amp; parenthesis (indicates a negative value, but the input is positive)</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">$  (#,###.00)  Money</td>
-			<td class="output"></td>
+			<td class="output" data-expected="$  (123,456,789.99)  Money"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Spaces &amp; parenthesis (negative)</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">$  (#,###.00)  Money</td>
-			<td class="output"></td>
+			<td class="output" data-expected="$  (123,456,789.99)  Money"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Prefix with comma</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">a, b c? #.00 yep!</td>
-			<td class="output"></td>
+			<td class="output" data-expected="a, b c? 123456789.99 yep!"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Prefix with a periods</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">cost... #,##0.00 yep!</td>
-			<td class="output"></td>
+			<td class="output" data-expected="cost... 123,456,789.99 yep!"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Suffix with comma &amp; period</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">$# ###,00 USD, or euros.</td>
-			<td class="output"></td>
+			<td class="output" data-expected="$123 456 789,99 USD, or euros."></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Suffix with period</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">It costs $# ###,00 euros.</td>
-			<td class="output"></td>
+			<td class="output" data-expected="It costs $123 456 789,99 euros."></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Hanging decimal</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">test:### ###. ing</td>
-			<td class="output"></td>
+			<td class="output" data-expected="test:123 456 790 ing"></td>
 		</tr>
 
 		<tr>
@@ -285,35 +287,35 @@ format( "#,##0.####", 1234567.890 );</pre>
 			<td>No "#" outside of mask</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">item #abc $#,###.00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="item #abc $123,456,789.99"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>No numbers outside of mask</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">99 items = $#,###.00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="99 items = $123,456,789.99"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>No dashes outside of mask</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">cost -- $#,###.00 -- value</td>
-			<td class="output"></td>
+			<td class="output" data-expected="cost -- $123,456,789.99 -- value"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>No plus sign in prefix</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">++ value! $#,###.00</td>
-			<td class="output"></td>
+			<td class="output" data-expected="++ value! $123,456,789.99"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>No plus sign in suffix</td>
 			<td class="input">123456789.9876</td>
 			<td class="format">$#,###.00 ++ value!</td>
-			<td class="output"></td>
+			<td class="output" data-expected="$123,456,789.99 ++ value!"></td>
 		</tr>
 
 	</table>
@@ -331,17 +333,21 @@ format( "#,##0.####", 1234567.890 );</pre>
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="src/format.js"></script>
+	<script src="lib/format.js"></script>
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" rel="stylesheet"></link>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
 	<script>
 	$('.row').each( function(i) {
 		var inp = $(this).find('td.input'),
-		fmt = $(this).find('td.format'),
-		out = $(this).find('td.output');
+			fmt = $(this).find('td.format'),
+			out = $(this).find('td.output'),
+			// Only this line is relevant to number formatting.
+			result = format(fmt.html().trim(), inp.html());
 
-		out.html( format(fmt.html(), inp.html())); //only this line is relevant to number formatting.
+		out
+			.toggleClass('valid', result === String(out.data('expected')))
+			.html(result);
 
 		$(this).find('.item').html( i + 1 );
 	});
