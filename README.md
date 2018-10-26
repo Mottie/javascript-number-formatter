@@ -10,13 +10,13 @@ This standalone number formatter<sup>&dagger;</sup> is intended to be short and 
 
 ```js
 format( "#,##0.####", 1234567.890 );  // output: "1,234,567.89"
-format( "$ #,###.00", -1234567.890 ); // output: "$ 1,234,567.89"
+format( "$ #,###.00", -1234567.890 ); // output: "$ -1,234,567.89"
 
 // Added in v2.0.0
-format( "$ #,###.00", -1234567.890, {ignoreMaskSign: true});  // output: "$ 1,234,567.89"
-format( "$ -#,###.00", -1234567.890, {ignoreMaskSign: true}); // output: "$ -1,234,567.89"
-format( "$ +#,###.00", -1234567.890, {ignoreMaskSign: true}); // output: "$ -1,234,567.89"
-format( "$ +#,###.00", 1234567.890, {ignoreMaskSign: true});  // output: "$ +1,234,567.89"
+format( "$ #,###.00", -1234567.890, {enforceMaskSign: true});  // output: "$ 1,234,567.89"
+format( "$ -#,###.00", -1234567.890, {enforceMaskSign: true}); // output: "$ -1,234,567.89"
+format( "$ +#,###.00", -1234567.890, {enforceMaskSign: true}); // output: "$ -1,234,567.89"
+format( "$ +#,###.00", 1234567.890, {enforceMaskSign: true});  // output: "$ +1,234,567.89"
 ```
 
 &dagger; Initial development release of this code was written by KPL and hosted at [Google Code](https://code.google.com/p/javascript-number-formatter/).
