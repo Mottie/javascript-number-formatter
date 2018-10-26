@@ -66,30 +66,30 @@ format( "#,##0.####", 1234567.890 );</pre>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Negative value</td>
-			<td class="input">0.1</td>
+			<td class="input">-0.1</td>
 			<td class="format">#</td>
 			<td class="output" data-expected=""></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Negative value</td>
-			<td class="input">0.1</td>
+			<td class="input">-0.1</td>
 			<td class="format">0</td>
 			<td class="output" data-expected="0"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Negative value</td>
-			<td class="input">0.13</td>
+			<td class="input">-0.13</td>
 			<td class="format">0.#</td>
-			<td class="output" data-expected="0.1"></td>
+			<td class="output" data-expected="-0.1"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Negative value</td>
-			<td class="input">5000.123456789</td>
+			<td class="input">-5000.123456789</td>
 			<td class="format">#,##0.######</td>
-			<td class="output" data-expected="5,000.123457"></td>
+			<td class="output" data-expected="-5,000.123457"></td>
 		</tr>
 		<tr>
 			<td colspan="6" class="group">Localization format</td>
@@ -104,16 +104,16 @@ format( "#,##0.####", 1234567.890 );</pre>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Estonia, France</td>
-			<td class="input">128983833.4560022</td>
+			<td class="input">-128983833.4560022</td>
 			<td class="format">### ###,##</td>
-			<td class="output" data-expected="128 983 833,46"></td>
+			<td class="output" data-expected="-128 983 833,46"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
 			<td>Germany, Italy</td>
-			<td class="input">1234560.10002920</td>
+			<td class="input">-1234560.10002920</td>
 			<td class="format">##.000,00</td>
-			<td class="output" data-expected="1.234.560,10"></td>
+			<td class="output" data-expected="-1.234.560,10"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -135,9 +135,9 @@ format( "#,##0.####", 1234567.890 );</pre>
 		<tr class="row">
 			<td class="item"></td>
 			<td></td>
-			<td class="input">1234.5678</td>
+			<td class="input">-1234.5678</td>
 			<td class="format">##.000,00</td>
-			<td class="output" data-expected="1.234,57"></td>
+			<td class="output" data-expected="-1.234,57"></td>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
@@ -237,8 +237,8 @@ format( "#,##0.####", 1234567.890 );</pre>
 		</tr>
 		<tr class="row">
 			<td class="item"></td>
-			<td>Spaces &amp; parenthesis (negative)</td>
-			<td class="input">123456789.9876</td>
+			<td>Spaces &amp; parenthesis (negative; not converted!)</td>
+			<td class="input">-123456789.9876</td>
 			<td class="format">$  (#,###.00)  Money</td>
 			<td class="output" data-expected="$  (123,456,789.99)  Money"></td>
 		</tr>
