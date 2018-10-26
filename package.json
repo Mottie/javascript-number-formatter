@@ -34,18 +34,36 @@
     "lib/",
     "index.d.ts"
   ],
+  "xo": {
+    "space": false,
+    "ignore": [
+      "rollup.config.js",
+      "lib"
+    ],
+    "envs": [
+      "node"
+    ],
+    "rules": {
+      "no-sparse-arrays": 0,
+      "quotes": [
+        "error",
+        "double"
+      ]
+    }
+  },
   "scripts": {
-    "test": "grunt test"
+    "build": "rollup -c",
+    "test": "xo && ava",
+    "updater": "npx updates -cu && npm install"
   },
   "typings": "./index.d.ts",
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-qunit": "^1.2.0",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "ava": "*",
+    "rollup": "^0.66.6",
+    "rollup-plugin-cjs-es": "^0.7.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-terser": "^3.0.0",
+    "updates": "^5.1.2",
+    "xo": "*"
   }
 }
