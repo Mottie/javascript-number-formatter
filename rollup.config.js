@@ -22,7 +22,7 @@ export default [{
 	output: [{
 		file: "lib/format.js",
 		name: "format",
-		format: "iife",
+		format: "umd",
 		sourceMap: false,
 		banner,
 	},{
@@ -41,7 +41,7 @@ export default [{
 	output: {
 		file: "lib/format.min.js",
 		name: "format",
-		format: "iife",
+		format: "umd",
 		sourceMap: false,
 		banner,
 	},
