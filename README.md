@@ -71,7 +71,7 @@ And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyo
 
 View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
 
-### v2.0.0 & 2.0.1 (2018-10-26)
+### v2.0.0 &ndash; 2.0.2 (2018-10-26)
 
 * Add `ignoreSign` option (modified to `enforeceMaskSign`!).
 * Switch to XO, AVA & rollup.
