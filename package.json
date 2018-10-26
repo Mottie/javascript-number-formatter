@@ -51,6 +51,9 @@
       ]
     }
   },
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "build": "rollup -c",
     "test": "xo && ava",
