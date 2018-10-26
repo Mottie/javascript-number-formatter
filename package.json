@@ -2,7 +2,7 @@
   "name": "number-format.js",
   "nick": "javascript-number-formatter",
   "description": "Lightweight & Fast JavaScript Number Formatter",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "homepage": "http://mottie.github.com/javascript-number-formatter/",
   "main": "lib/format.min.js",
   "demo": "https://github.com/Mottie/javascript-number-formatter/index.html",
