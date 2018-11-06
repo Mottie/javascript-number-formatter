@@ -71,6 +71,10 @@ And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyo
 
 View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
 
+### V2.0.6 (2018-11-06)
+
+* Trim trailing zeros in mask. Fixes [issue #18](https://github.com/Mottie/javascript-number-formatter/issues/18).
+
 ### v2.0.0 &ndash; 2.0.5 (2018-10-26)
 
 * Add `ignoreSign` option (modified to `enforeceMaskSign`!).
@@ -97,16 +101,3 @@ View the [complete change log here](https://github.com/Mottie/javascript-number-
 * Demo:
   * Fix prettify loading.
   * Use https. Fixes [issue #13](https://github.com/Mottie/javascript-number-formatter/issues/13).
-
-### v1.1.11 (2017-01-31)
-
-* Readme:
-  * Update log.
-  * Add playground link.
-  * Reword note.
-* Meta:
-  * Update dependencies.
-  * Remove GPL portion of the license &amp; update `package.json` entry.
-  * Fix `bower.json` "main" reference.
-* Build:
-  * Fix build process to use the updated `package.json` license format.
