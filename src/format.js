@@ -55,12 +55,11 @@ function processValue(value, maskObj, options) {
 	// Fix the decimal first, toFixed will auto fill trailing zero.
 	valObj.value = Number(valObj.value).toFixed(maskObj.fraction && maskObj.fraction.length);
 	// Convert number to string to trim off *all* trailing decimal zero(es)
-	valObj.value = valObj.value.toString();
+	valObj.value = Number(valObj.value).toString();
 
 	// Fill back any trailing zero according to format
 	// look for last zero in format
 	const posTrailZero = maskObj.fraction && maskObj.fraction.lastIndexOf("0");
-
 	let [valInteger = "0", valFraction = ""] = valObj.value.split(".");
 	if (!valFraction || (valFraction && valFraction.length <= posTrailZero)) {
 		valFraction = (Number("0." + valFraction).toFixed(posTrailZero + 1)).replace("0.", "");
