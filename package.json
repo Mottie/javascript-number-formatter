@@ -62,7 +62,7 @@
   "typings": "./index.d.ts",
   "devDependencies": {
     "ava": "*",
-    "rollup": "^0.66.6",
+    "rollup": "^0.67.0",
     "rollup-plugin-cjs-es": "^0.7.0",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-terser": "^3.0.0",
