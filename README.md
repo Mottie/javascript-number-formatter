@@ -6,7 +6,7 @@ Lightweight & Fast JavaScript Number Formatter
 
 ## Introduction
 
-This standalone number formatter<sup>&dagger;</sup> is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is as short as < 140 lines including license info, blank lines and comments. And production release is less than 1,900 bytes.
+This standalone number formatter<sup>&dagger;</sup> is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is around 150 lines including license info, blank lines and comments. And production release is less than 2,000 bytes.
 
 ```js
 format( "#,##0.####", 1234567.890 );  // output: "1,234,567.89"
@@ -87,7 +87,17 @@ And a jsFiddle was created to aid in testing: https://jsfiddle.net/Mottie/t2etyo
 
 View the [complete change log here](https://github.com/Mottie/javascript-number-formatter/wiki).
 
-### V2.0.6 (2018-11-06)
+### v2.0.7 (2018-11-13)
+
+* Update typescript binding. See [issue #20](https://github.com/Mottie/javascript-number-formatter/issues/20).
+* Fix improper placeholder behavior. Updated Readme with format symbols table. Closes [issue #19](https://github.com/Mottie/javascript-number-formatter/issues/19).
+* Add more tests.
+* Meta:
+  * Update dependencies.
+  * Improve code readability.
+  * Include version in min.js.
+
+### v2.0.6 (2018-11-06)
 
 * Trim trailing zeros in mask. Fixes [issue #18](https://github.com/Mottie/javascript-number-formatter/issues/18).
 
@@ -104,16 +114,3 @@ View the [complete change log here](https://github.com/Mottie/javascript-number-
   * Switch demo to use lib file & highlight valid results.
 * Switch from Grunt to rollup.
 * Switch from IIFE to UMD output.
-
-### v1.1.12 (2018-09-05)
-
-* Core
-  * Different Handling for Negative "-" and Positive "+" Signs. See [pull #11](https://github.com/Mottie/javascript-number-formatter/pull/11); thanks [@hyyan](https://github.com/hyyan)!
-  * Prevent JS error when passing a string.
-* Readme:
-  * Update log.
-* Meta:
-  * Add typescript support. See [pull #8](https://github.com/Mottie/javascript-number-formatter/pull/8); thanks [@chuv](https://github.com/chuv)!
-* Demo:
-  * Fix prettify loading.
-  * Use https. Fixes [issue #13](https://github.com/Mottie/javascript-number-formatter/issues/13).
