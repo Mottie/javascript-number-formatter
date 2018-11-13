@@ -6,7 +6,7 @@ Lightweight & Fast JavaScript Number Formatter
 
 ## Introduction
 
-This standalone number formatter<sup>&dagger;</sup> is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is as short as < 120 lines including license info, blank lines and comments. And production release is less than 1,200 bytes.
+This standalone number formatter<sup>&dagger;</sup> is intended to be short and fast. As they are the main factors for a high performance JavaScript app. Development release is as short as < 140 lines including license info, blank lines and comments. And production release is less than 1,900 bytes.
 
 ```js
 format( "#,##0.####", 1234567.890 );  // output: "1,234,567.89"
@@ -39,6 +39,22 @@ format( "$ +#,###.00", 1234567.890, {enforceMaskSign: true});  // output: "$ +1,
 * No color control.
 * <del>No prefix or suffix is allowed except leading negation symbol. So `$#,##0.00` or `#,###.##USD` will not yield expected outcome. Use `'$'+format('#,##0.00', 123.45)` or `format('#,##0.00', 456.789) + 'USD'`</del>
 * The prefix or suffix *can not* include any numbers (`0-9`), dashes (`-`), or plus signs (`+`).
+
+## Format Symbols
+
+| Description   | Symbol | Summary |
+|---------------|--------|---------|
+| Mask symbols  | #0123456789+- | Mask symbols used for formatting the value. |
+| Placeholders  | #123456789    | Un-forced digit*; this optional digit will only show if it is required as a placeholder. |
+| Zero          | 0             | Forced digit; the digit will be shown whether or not the digit is relevant to the value. |
+| Signs         | +-            | Indicates a positive or negative value; visible depending on the value sign and the `enforceMaskSign` setting. |
+| Leftmost      |               | _Any_ non-mask symbol&dagger; inside the mask will be set to represent a thousands separator. |
+| Rightmost     |               | _Any_ non-mask symbol&dagger; inside the mask&Dagger; will be set to represent the decimal separator. |
+| Prefix/Suffix |               | _Any_ non-mask symbol&dagger; outside the mask. |
+
+\* Non-zero mask digits (`1` through `9`) behave the same as the `#`.<br>
+&dagger; Anything not a digit, and not a `+`, `-` or `#`.<br>
+&Dagger; In the case where there is a trailing decimal or comma, it will be included in the mask, e.g. `#.` or `0,`.
 
 ## Installation
 
