@@ -43,7 +43,7 @@ export default [{
 		name: "format",
 		format: "umd",
 		sourceMap: false,
-		banner,
+		banner: `/*! Javascript-number-formatter v${pkg.version} */`,
 	},
 	plugins: [
 		resolve(),
@@ -51,6 +51,9 @@ export default [{
 		terser({
 			compress: {
 				passes: 3
+			},
+			output: {
+				comments: /^!/
 			}
 		})
 	]
