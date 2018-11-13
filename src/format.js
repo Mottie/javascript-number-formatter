@@ -62,9 +62,9 @@ function processValue(value, maskObj, options) {
 	const posTrailZero = maskObj.fraction && maskObj.fraction.lastIndexOf("0");
 	let [valInteger = "0", valFraction = ""] = valObj.value.split(".");
 	if (!valFraction || (valFraction && valFraction.length <= posTrailZero)) {
-		valFraction = posTrailZero < 0 ?
-			"" :
-			(Number("0." + valFraction).toFixed(posTrailZero + 1)).replace("0.", "");
+		valFraction = posTrailZero < 0
+			? ""
+			: (Number("0." + valFraction).toFixed(posTrailZero + 1)).replace("0.", "");
 	}
 	valObj.integer = valInteger;
 	valObj.fraction = valFraction;
@@ -82,7 +82,9 @@ function processValue(value, maskObj, options) {
 	} else if (isNegative && maskObj.maskHasPositiveSign) {
 		valObj.sign = "-";
 	} else if (isNegative) {
-		valObj.sign = options && options.enforceMaskSign && !maskObj.maskHasNegativeSign ? "" : "-";
+		valObj.sign = options && options.enforceMaskSign && !maskObj.maskHasNegativeSign
+			? ""
+			: "-";
 	}
 	return valObj;
 }
@@ -119,7 +121,9 @@ function addSeparators(valObj, maskObj) {
 	} else {
 		valObj.result = valObj.integer;
 	}
-	valObj.result += (maskObj.fraction && valObj.fraction) ? maskObj.decimal + valObj.fraction : "";
+	valObj.result += (maskObj.fraction && valObj.fraction)
+		? maskObj.decimal + valObj.fraction
+		: "";
 	return valObj;
 }
 

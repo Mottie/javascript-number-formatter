@@ -48,7 +48,8 @@
       "quotes": [
         "error",
         "double"
-      ]
+      ],
+      "operator-linebreak": 0
     }
   },
   "engines": {
