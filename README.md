@@ -56,17 +56,17 @@ format( "$ +#,###.00", 1234567.890, {enforceMaskSign: true});  // output: "$ +1,
 &dagger; Anything not a digit, and not a `+`, `-` or `#`.<br>
 &Dagger; In the case where there is a trailing decimal or comma, it will be included in the mask, e.g. `#.` or `0,`.
 
-## Installation
-
-### npm package
-
-    npm install --save number-format.js
-
 ## Note
 
 When only one symbol is supplied, the library will always treat that symbol as a decimal. For example, `format( '#,###', 1234567.890)` will output `1234567,890`.
 
 To force a single symbol to be used as a separator, add a trailing symbol. In this example, a period is added to the end of the mask - `format( '#,###.', 1234567.890)` - resulting in it being used as a decimal and forcing the first symbol to be the separator and return this output: `1,234,567`.
+
+## Installation
+
+### npm package
+
+    npm install --save number-format.js
 
 ## Demos
 
