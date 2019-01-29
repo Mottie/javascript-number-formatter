@@ -1,5 +1,6 @@
 import cjs from "rollup-plugin-cjs-es";
 import resolve from "rollup-plugin-node-resolve";
+import babel from "rollup-plugin-babel";
 import {terser} from "rollup-plugin-terser";
 
 import pkg from "./package.json";
@@ -34,9 +35,39 @@ export default [{
 	}],
 	plugins: [
 		resolve(),
-		cjs({nested: true})
+		cjs({
+			nested: true
+		})
 	]
 }, {
+	input: "src/format.js",
+	output: [{
+		file: "lib/format.es5.js",
+		name: "format",
+		format: "umd",
+		sourceMap: false,
+		banner,
+	}],
+	plugins: [
+		resolve(),
+		cjs({
+			nested: true
+		}),
+		babel({
+			exclude: "node_modules/**",
+			presets: [
+				["@babel/preset-env", {
+					modules: false
+				}]
+			],
+			plugins: [
+				"@babel/plugin-transform-object-assign"
+			]
+		}),
+	]
+},
+
+{
 	input: "src/format.js",
 	output: {
 		file: "lib/format.min.js",
@@ -47,7 +78,9 @@ export default [{
 	},
 	plugins: [
 		resolve(),
-		cjs({nested: true}),
+		cjs({
+			nested: true
+		}),
 		terser({
 			compress: {
 				passes: 3
