@@ -50,6 +50,7 @@ function processValue(value, maskObj, options) {
 		// Process only abs(), and turn on flag.
 		valObj.value = -valObj.value;
 	}
+
 	valObj.sign = isNegative ? "-" : "";
 
 	// Fix the decimal first, toFixed will auto fill trailing zero.
@@ -66,6 +67,7 @@ function processValue(value, maskObj, options) {
 			? ""
 			: (Number("0." + valFraction).toFixed(posTrailZero + 1)).replace("0.", "");
 	}
+
 	valObj.integer = valInteger;
 	valObj.fraction = valFraction;
 	addSeparators(valObj, maskObj);
@@ -86,6 +88,7 @@ function processValue(value, maskObj, options) {
 			? ""
 			: "-";
 	}
+
 	return valObj;
 }
 
@@ -121,6 +124,7 @@ function addSeparators(valObj, maskObj) {
 	} else {
 		valObj.result = valObj.integer;
 	}
+
 	valObj.result += (maskObj.fraction && valObj.fraction)
 		? maskObj.decimal + valObj.fraction
 		: "";
@@ -132,6 +136,7 @@ module.exports = (mask, value, options = {}) => {
 		// Invalid inputs
 		return value;
 	}
+
 	const maskObj = processMask(mask);
 	const valObj = processValue(value, maskObj, options);
 	return maskObj.prefix + valObj.sign + valObj.result + maskObj.suffix;
